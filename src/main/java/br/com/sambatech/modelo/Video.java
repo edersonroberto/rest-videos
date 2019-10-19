@@ -1,11 +1,9 @@
 package br.com.sambatech.modelo;
 
-import com.sun.jmx.snmp.Timestamp;
-
 public class Video {
 	
 	private double duration;
-	private Timestamp timestamp;
+	private long timestamp;
 	
 	public double getDuration() {
 		return duration;
@@ -13,10 +11,11 @@ public class Video {
 	public void setDuration(double duration) {
 		this.duration = duration;
 	}
-	public Timestamp getTimestamp() {
+	public Long getTimestamp() {
 		return timestamp;
 	}
-	public void setTimestamp(Timestamp timestamp) {
+	public void setTimestamp(Long timestamp) {
 		this.timestamp = timestamp;
 	}
+
 }
