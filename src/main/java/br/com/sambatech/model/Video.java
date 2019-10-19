@@ -1,4 +1,4 @@
-package br.com.sambatech.modelo;
+package br.com.sambatech.model;
 
 public class Video {
 	
