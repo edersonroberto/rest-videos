@@ -3,8 +3,6 @@ package br.com.sambatech.model;
 import java.util.Iterator;
 import java.util.List;
 
-import com.sun.jmx.snmp.Timestamp;
-
 public class Estatistica {
 
 	private double sum;
@@ -22,8 +20,7 @@ public class Estatistica {
 	}
 
 	public void calculaEstatistica(List<Video> videos) {
-		Timestamp time = new Timestamp();
-		long time_now = time.getDateTime();
+		long time_now = System.currentTimeMillis();
 		
 		Video video;
 		Iterator<Video> video_iter = videos.iterator();

@@ -4,12 +4,16 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import br.com.sambatech.model.Video;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class VideoServiceTest {
 
 	private final String CONTEXT_PATH = "/rest-videos/rest";
@@ -30,7 +34,7 @@ public class VideoServiceTest {
 		long time = System.currentTimeMillis();
 		video.setTimestamp(time);
 		
-		Response response = given().contentType("application/json").accept("application/json")
+		Response response = given().contentType(ContentType.JSON).accept(ContentType.JSON)
 				.body(video).when()
 				.post(path).then().statusCode(201).contentType("application/json").extract()
 				.response();
@@ -49,26 +53,49 @@ public class VideoServiceTest {
 		long time = System.currentTimeMillis();
 		video.setTimestamp(time - 6001);
 		
-		Response response = given().contentType("application/json").accept("application/json").body(video).when()
+		Response response = given().contentType(ContentType.JSON).accept(ContentType.JSON).body(video).when()
 				.post(path).then().statusCode(204).contentType("application/json").extract()
 				.response();
 		
-		int status_cod = response.getStatusCode();
-		assertEquals(204, status_cod);
+		assertEquals(204, response.getStatusCode());
 		
 	}
-
-
+	
+	
 	@Test
-	public void testDelete() {
+	public void testEStatistics() {
 		
+		
+		String path = CONTEXT_PATH + "/statistics";
+		Response response = given().contentType(ContentType.JSON).get(path);
+		assertEquals(200, response.getStatusCode());
+				
+	}
+	
+	@Test
+	public void testEStatisticsConteudo() {
+		
+		String path = CONTEXT_PATH + "/statistics";
+		Response response = given().contentType(ContentType.JSON).get(path);
+		Double sum = Double.parseDouble(response.jsonPath().getString("sum"));
+		assertEquals(200.3, sum, 0D);;
+				
 	}
 
 	@Test
-	public void testStatistics() {
+	public void testRestDelete() {
+		String path = CONTEXT_PATH + "/videos";
+		Response response = given().contentType(ContentType.JSON).delete(path);
+		assertEquals(204, response.getStatusCode());
+	}
+
+	@Test
+	public void testEstatisticsSemVideos() {
 		
-		
-		
+		String path = CONTEXT_PATH + "/statistics";
+		Response response = given().contentType(ContentType.JSON).get(path);
+		assertEquals(200, response.getStatusCode());
+				
 	}
 
 }

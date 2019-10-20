@@ -29,15 +29,15 @@ public class VideoService {
 		String msg = "";
 		Status status = null;
 		long time_now = System.currentTimeMillis();
-		
+
 		if (time_now - video.getTimestamp() > 6000) {
 			status = Response.Status.NO_CONTENT;
-		}else {
-			msg = "Criado com sucesso" + time_now;
+		} else {
+			msg = "Criado com sucesso - " + time_now;
 			status = Response.Status.CREATED;
 			videos.add(video);
 		}
-			
+
 		return Response.status(status).entity(msg).build();
 	}
 
@@ -53,22 +53,26 @@ public class VideoService {
 	@Path("/videos")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response delete() {
+		Response response = null;
 		String msg = "Todos os videos removidos com sucesso";
+
 		videos = new ArrayList<Video>();
-		return Response.status(Response.Status.NO_CONTENT).entity(msg).build();
+		response = Response.status(Response.Status.NO_CONTENT).entity(msg).build();
+
+		return response;
 	}
-	
+
 	@GET
 	@Path("/statistics")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Estatistica statistics(){
-		
+	public Estatistica statistics() {
+
 		Estatistica estatistica = new Estatistica();
 		if (videos.size() == 0) {
 			return null;
 		}
 		estatistica.calculaEstatistica(videos);
-		
+
 		return estatistica;
 	}
 
