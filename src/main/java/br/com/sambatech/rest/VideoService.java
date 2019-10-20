@@ -13,8 +13,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import com.sun.jmx.snmp.Timestamp;
-
 import br.com.sambatech.model.Estatistica;
 import br.com.sambatech.model.Video;
 
@@ -25,18 +23,17 @@ public class VideoService {
 
 	@POST
 	@Path("/videos")
-	@Produces(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response add(Video video) {
 		String msg = "";
 		Status status = null;
-		Timestamp time = new Timestamp();
-		long time_now = time.getDateTime();
+		long time_now = System.currentTimeMillis();
 		
-		if (time_now - video.getTimestamp() > 60) {
+		if (time_now - video.getTimestamp() > 6000) {
 			status = Response.Status.NO_CONTENT;
 		}else {
-			msg = "Criado com sucesso";
+			msg = "Criado com sucesso" + time_now;
 			status = Response.Status.CREATED;
 			videos.add(video);
 		}
@@ -47,7 +44,7 @@ public class VideoService {
 	@GET
 	@Path("/videos")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Video> listarNota() {
+	public List<Video> listarVideo() {
 
 		return videos;
 	}

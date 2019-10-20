@@ -1,0 +1,3 @@
+br\com\sambatech\model\Video.class
+br\com\sambatech\model\Estatistica.class
+br\com\sambatech\rest\VideoService.class
