@@ -1,6 +1,6 @@
 # rest-videos
 
-## Tabela de Conteúdos
+##### Tabela de Conteúdos
 [Informação Geral](#informação-geral)
 [Tecnologias](#tecnologias)
 [Requisitos](#requisitos)
