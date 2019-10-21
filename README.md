@@ -1,22 +1,23 @@
 # rest-videos
 
 ## Tabela de Conteúdos
-*[Informação Geral] (##informação-geral)
-*[Tecnologias] (##tecnologias)
-*[Instalação] (##instalação)
-*[Testes] (#$testes)
+[Informação Geral] (#informação-geral)
+[Tecnologias] (#tecnologias)
+[Requisitos] (#requisitos)
+[Instalação] (#instalação)
+[Testes] (#testes)
 
-## General info
+## Informação Geral
 Esse projeto consiste em uma API RESTful para gerar estatísticas de vídeos inseridos.
 
-## Thecnologies
+## Tecnologias
 Esse projeto foi criado com:
 * Eclipse IDE for Enterprise Java Developers. Version: 2019-06 (4.12.0)
 * Java Versão 8
 * Apache Tomcat v8.5 Server
 
 
-## Setup
+## Requisitos
 Para rodar esse projeto utilizar:  
 1. Eclipse versão 2019-06 ou superior. 
 2. Tomcat v8.5 ou superior.
