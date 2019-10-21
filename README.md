@@ -1,11 +1,11 @@
 # rest-videos
 
 ## Tabela de Conteúdos
-[Informação Geral] (#informação-geral)
-[Tecnologias] (#tecnologias)
-[Requisitos] (#requisitos)
-[Instalação] (#instalação)
-[Testes] (#testes)
+[Informação Geral](#informação-geral)
+[Tecnologias](#tecnologias)
+[Requisitos](#requisitos)
+[Instalação](#instalação)
+[Testes](#testes)
 
 ## Informação Geral
 Esse projeto consiste em uma API RESTful para gerar estatísticas de vídeos inseridos.
