@@ -1,6 +1,7 @@
 package br.com.videos.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import br.com.videos.model.Video;
@@ -23,6 +24,11 @@ public class VideoDAO {
 		Long id = contador.incrementAndGet();
 		banco.put(id, video);
 		
+	}
+
+	public List<Video> buscaVideos() {
+		
+		return (List<Video>) banco.values();
 	}
 
 }

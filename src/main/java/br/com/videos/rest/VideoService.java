@@ -13,6 +13,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import br.com.videos.dao.VideoDAO;
 import br.com.videos.model.Estatistica;
 import br.com.videos.model.Video;
 
@@ -20,7 +21,9 @@ import br.com.videos.model.Video;
 public class VideoService {
 
 	private static List<Video> videos = new ArrayList<Video>();
-
+	private static VideoDAO videoDao= new VideoDAO();
+	
+	
 	@POST
 	@Path("/videos")
 	@Produces(MediaType.APPLICATION_JSON)
@@ -45,7 +48,7 @@ public class VideoService {
 	@Path("/videos")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Video> listarVideo() {
-
+		videos = videoDao.buscaVideos();
 		return videos;
 	}
 
