@@ -1,3 +1,4 @@
-br\com\sambatech\model\Video.class
-br\com\sambatech\model\Estatistica.class
-br\com\sambatech\rest\VideoService.class
+br\com\videos\model\Video.class
+br\com\videos\model\Estatistica.class
+br\com\videos\dao\VideoDAO.class
+br\com\videos\rest\VideoService.class

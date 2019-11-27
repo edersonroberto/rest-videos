@@ -1,3 +1,4 @@
-C:\Users\eders\eclipse-workspace\rest-videos\src\main\java\br\com\sambatech\model\Video.java
-C:\Users\eders\eclipse-workspace\rest-videos\src\main\java\br\com\sambatech\rest\VideoService.java
-C:\Users\eders\eclipse-workspace\rest-videos\src\main\java\br\com\sambatech\model\Estatistica.java
+C:\Users\ersouza\dev\eclipse-workspace\rest-videos\src\main\java\br\com\videos\model\Estatistica.java
+C:\Users\ersouza\dev\eclipse-workspace\rest-videos\src\main\java\br\com\videos\rest\VideoService.java
+C:\Users\ersouza\dev\eclipse-workspace\rest-videos\src\main\java\br\com\videos\model\Video.java
+C:\Users\ersouza\dev\eclipse-workspace\rest-videos\src\main\java\br\com\videos\dao\VideoDAO.java

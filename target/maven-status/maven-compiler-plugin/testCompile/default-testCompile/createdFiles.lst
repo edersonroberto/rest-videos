@@ -1,2 +1,2 @@
-br\com\sambatech\rest\VideoServiceTest.class
-br\com\sambatech\model\EstatisticaTest.class
+br\com\videos\model\EstatisticaTest.class
+br\com\videos\rest\VideoServiceTest.class
